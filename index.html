@@ -15,7 +15,8 @@
   <nav>
     <div class="nav-content">
       <h1>Vandana Sethiya</h1>
-      <ul>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <ul id="nav-links">
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#featured">Featured</a></li>
         <li><a href="#measurements">Measurements</a></li>
@@ -109,6 +110,16 @@
   <footer>
     <p>&copy; 2025 Vandana Sethiya</p>
   </footer>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 
 </body>
 </html>
