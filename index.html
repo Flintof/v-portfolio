@@ -15,8 +15,7 @@
   <nav>
     <div class="nav-content">
       <h1>Vandana Sethiya</h1>
-      <button class="hamburger" id="hamburger">&#9776;</button>
-      <ul id="nav-links">
+      <ul>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#featured">Featured</a></li>
         <li><a href="#measurements">Measurements</a></li>
@@ -34,49 +33,22 @@
   <section class="gallery" id="gallery">
     <h2>Gallery</h2>
 
-    <div class="gallery-set">
-      <h3>Outfit A</h3>
-      <div class="grid">
-        <img src="./images/A1.png" alt="Outfit A - Photo 1">
-        <img src="./images/A2.png" alt="Outfit A - Photo 2">
-        <img src="./images/A3.png" alt="Outfit A - Photo 3">
-      </div>
-    </div>
-
-    <div class="gallery-set">
-      <h3>Outfit B</h3>
-      <div class="grid">
-        <img src="./images/B1.png" alt="Outfit B - Photo 1">
-        <img src="./images/B2.png" alt="Outfit B - Photo 2">
-        <img src="./images/B3.png" alt="Outfit B - Photo 3">
-      </div>
-    </div>
-
-    <div class="gallery-set">
-      <h3>Outfit C</h3>
-      <div class="grid">
-        <img src="./images/C1.png" alt="Outfit C - Photo 1">
-        <img src="./images/C2.png" alt="Outfit C - Photo 2">
-        <img src="./images/C3.png" alt="Outfit C - Photo 3">
-      </div>
-    </div>
-
-    <div class="gallery-set">
-      <h3>Outfit D</h3>
-      <div class="grid">
-        <img src="./images/D1.png" alt="Outfit D - Photo 1">
-        <img src="./images/D2.png" alt="Outfit D - Photo 2">
-        <img src="./images/D3.png" alt="Outfit D - Photo 3">
-      </div>
-    </div>
-
-    <div class="gallery-set">
-      <h3>Outfit E</h3>
-      <div class="grid">
-        <img src="./images/E1.png" alt="Outfit E - Photo 1">
-        <img src="./images/E2.png" alt="Outfit E - Photo 2">
-        <img src="./images/E3.png" alt="Outfit E - Photo 3">
-      </div>
+    <div class="grid">
+      <img src="./images/A1.png" alt="Photo A1" class="popup-img">
+      <img src="./images/A2.png" alt="Photo A2" class="popup-img">
+      <img src="./images/A3.png" alt="Photo A3" class="popup-img">
+      <img src="./images/B1.png" alt="Photo B1" class="popup-img">
+      <img src="./images/B2.png" alt="Photo B2" class="popup-img">
+      <img src="./images/B3.png" alt="Photo B3" class="popup-img">
+      <img src="./images/C1.png" alt="Photo C1" class="popup-img">
+      <img src="./images/C2.png" alt="Photo C2" class="popup-img">
+      <img src="./images/C3.png" alt="Photo C3" class="popup-img">
+      <img src="./images/D1.png" alt="Photo D1" class="popup-img">
+      <img src="./images/D2.png" alt="Photo D2" class="popup-img">
+      <img src="./images/D3.png" alt="Photo D3" class="popup-img">
+      <img src="./images/E1.png" alt="Photo E1" class="popup-img">
+      <img src="./images/E2.png" alt="Photo E2" class="popup-img">
+      <img src="./images/E3.png" alt="Photo E3" class="popup-img">
     </div>
   </section>
 
@@ -90,12 +62,12 @@
   <section class="measurements" id="measurements">
     <h2>Measurements</h2>
     <ul>
-      <li>Height: 6'1"</li>
-      <li>Bust: 32"</li>
-      <li>Waist: 24"</li>
+      <li>Height: 5'4"</li>
+      <li>Bust: 30"</li>
+      <li>Waist: 29"</li>
       <li>Hips: 35"</li>
-      <li>Shoe: US 9</li>
-      <li>Hair: Black</li>
+      <li>Shoe: US 6.5</li>
+      <li>Hair: Brown</li>
       <li>Eyes: Brown</li>
     </ul>
   </section>
@@ -111,15 +83,37 @@
     <p>&copy; 2025 Vandana Sethiya</p>
   </footer>
 
-  <!-- JavaScript for Hamburger Menu -->
+  <!-- Lightbox Script -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    const popupImages = document.querySelectorAll('.popup-img');
+    const lightbox = document.createElement('div');
+    lightbox.classList.add('lightbox-overlay');
+    document.body.appendChild(lightbox);
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+    const lightboxImg = document.createElement('img');
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.classList.add('lightbox-close');
+
+    lightbox.appendChild(closeBtn);
+    lightbox.appendChild(lightboxImg);
+
+    popupImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxImg) {
+        lightbox.classList.remove('show');
+      }
     });
   </script>
-
 </body>
 </html>
