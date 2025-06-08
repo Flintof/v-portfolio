@@ -4,141 +4,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vandana Sethiya | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+  <title>Vandana Sethiya Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-
-  <!-- Navbar -->
-  <nav>
-    <div class="nav-content">
-      <h1>Vandana Sethiya</h1>
-      <ul>
-        <li><a href="#gallery">Gallery</a></li>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="#">Home</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
         <li><a href="#featured">Featured</a></li>
-        <li><a href="#measurements">Measurements</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </div>
-  </nav>
-
-  <!-- Hero -->
-  <header class="hero">
-    <h2>Model • Actor • Poser</h2>
+    </nav>
+    <h1>Vandana Sethiya</h1>
+    <p class="tagline">Model | Actor</p>
   </header>
 
-  <!-- Gallery -->
-  <section class="gallery" id="gallery">
-    <h2>Gallery</h2>
-    <div class="grid">
-      <img src="./images/A1.png" alt="Photo A1" class="popup-img">
-      <img src="./images/A2.png" alt="Photo A2" class="popup-img">
-      <img src="./images/A3.png" alt="Photo A3" class="popup-img">
-      <img src="./images/B1.png" alt="Photo B1" class="popup-img">
-      <img src="./images/B2.png" alt="Photo B2" class="popup-img">
-      <img src="./images/B3.png" alt="Photo B3" class="popup-img">
-      <img src="./images/C1.png" alt="Photo C1" class="popup-img">
-      <img src="./images/C2.png" alt="Photo C2" class="popup-img">
-      <img src="./images/C3.png" alt="Photo C3" class="popup-img">
-      <img src="./images/D1.png" alt="Photo D1" class="popup-img">
-      <img src="./images/D2.png" alt="Photo D2" class="popup-img">
-      <img src="./images/D3.png" alt="Photo D3" class="popup-img">
-      <img src="./images/E1.png" alt="Photo E1" class="popup-img">
-      <img src="./images/E2.png" alt="Photo E2" class="popup-img">
-      <img src="./images/E3.png" alt="Photo E3" class="popup-img">
-    </div>
-  </section>
-
-  <!-- Featured -->
-  <section class="featured" id="featured">
-    <h2>Featured Work</h2>
-
-    <!-- Invisalign Ad -->
-    <div class="featured-ad">
-      <a href="https://www.youtube.com/watch?v=m8JHBZNerJM" target="_blank">
-        <img src="./images/invisalign-ad.png" alt="Invisalign Ad">
-      </a>
-      <p>Watch Vandana in the official Invisalign commercial.</p>
-    </div>
-
-    <!-- Saree Carousel -->
+  <section class="carousel" id="portfolio">
     <div class="carousel-container">
-      <h3>Neela by Anuvardhan</h3>
-      <a href="https://instagram.com/neela_by_anuvardhan" target="_blank" class="brand-link">@neela_by_anuvardhan</a>
-      <div class="carousel">
-        <div class="carousel-track">
-          <img src="./images/sareeA1.png" alt="">
-          <img src="./images/sareeA2.png" alt="">
-          <img src="./images/sareeA3.png" alt="">
-          <img src="./images/sareeA4.png" alt="">
-          <img src="./images/sareeB1.png" alt="">
-          <img src="./images/sareeB2.png" alt="">
-          <img src="./images/sareeB3.png" alt="">
-          <img src="./images/sareeB4.png" alt="">
-        </div>
+      <div class="carousel-track">
+        <!-- Add more images as needed -->
+        <img src="img/photo1.jpg" alt="Photo 1">
+        <img src="img/photo2.jpg" alt="Photo 2">
+        <img src="img/photo3.jpg" alt="Photo 3">
+        <img src="img/photo4.jpg" alt="Photo 4">
+        <img src="img/photo5.jpg" alt="Photo 5">
       </div>
     </div>
   </section>
 
-  <!-- Measurements -->
-  <section class="measurements" id="measurements">
-    <h2>Measurements</h2>
-    <ul>
-      <li>Height: 5'4"</li>
-      <li>Bust: 30"</li>
-      <li>Waist: 29"</li>
-      <li>Hips: 35"</li>
-      <li>Shoe: US 6.5</li>
-      <li>Hair: Brown</li>
-      <li>Eyes: Brown</li>
-    </ul>
+  <section id="featured" class="featured">
+    <h2>Featured Work</h2>
+    <div class="featured-ad">
+      <img src="img/invisalign.jpg" alt="Invisalign Ad">
+      <p>Watch Vandana in the official Invisalign commercial.</p>
+      <p><strong>Neela by Anuvardhan</strong><br>@neela_by_anuvardhan</p>
+    </div>
+    <div class="gallery">
+      <img src="img/neela1.jpg" alt="Neela 1">
+      <img src="img/neela2.jpg" alt="Neela 2">
+      <img src="img/neela3.jpg" alt="Neela 3">
+      <img src="img/neela4.jpg" alt="Neela 4">
+      <img src="img/neela5.jpg" alt="Neela 5">
+    </div>
   </section>
 
-  <!-- Contact -->
+  <section class="measurements">
+    <div class="centered-section">
+      <h2>Measurements</h2>
+      <p>Height: 5'4"<br>
+        Bust: 30"<br>
+        Waist: 29"<br>
+        Hips: 35"<br>
+        Shoe: US 6.5<br>
+        Hair: Brown<br>
+        Eyes: Brown</p>
+    </div>
+  </section>
+
   <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:vandhanasethiya1998@gmail.com">vandhanasethiya1998@gmail.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/meetvandanasethiya" target="_blank">@meetvandanasethiya</a></p>
+    <div class="centered-section">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:vandanasethiya1998@gmail.com">vandanasethiya1998@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/meetvandanasethiya" target="_blank">@meetvandanasethiya</a></p>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Vandana Sethiya</p>
+    <p>© 2025 Vandana Sethiya</p>
   </footer>
-
-  <!-- Lightbox Script -->
-  <script>
-    const popupImages = document.querySelectorAll('.popup-img');
-    const lightbox = document.createElement('div');
-    lightbox.classList.add('lightbox-overlay');
-    document.body.appendChild(lightbox);
-
-    const lightboxImg = document.createElement('img');
-    const closeBtn = document.createElement('span');
-    closeBtn.innerHTML = '&times;';
-    closeBtn.classList.add('lightbox-close');
-
-    lightbox.appendChild(closeBtn);
-    lightbox.appendChild(lightboxImg);
-
-    popupImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('show');
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.classList.remove('show');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target === lightboxImg) {
-        lightbox.classList.remove('show');
-      }
-    });
-  </script>
 </body>
 
 </html>
