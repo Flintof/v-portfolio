@@ -126,7 +126,7 @@ nav a {
 
 .carousel-track {
   display: flex;
-  animation: scroll 10s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
 .carousel-track img {
