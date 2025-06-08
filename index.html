@@ -1,274 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Neela by Anuvardan</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet"/>
-  <style>
-    /* === Global Styles === */
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #fffaf3;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3 {
-      font-family: 'Playfair Display', serif;
-      color: #3a2e2e;
-    }
-
-    /* === Navbar === */
-    nav {
-      background-color: #f5efe0;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    nav h1 {
-      margin: 0;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #3a2e2e;
-      font-weight: 500;
-    }
-
-    /* === Hero === */
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background-color: #fdf8ee;
-    }
-
-    /* === Gallery === */
-    .gallery {
-      padding: 2rem;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .gallery h2 {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
-    }
-
-    .grid img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s;
-    }
-
-    .grid img:hover {
-      transform: scale(1.03);
-    }
-
-    /* === Featured === */
-    .featured {
-      padding: 3rem 2rem;
-      background-color: #fefcf9;
-      text-align: center;
-    }
-
-    .featured h2 {
-      margin-bottom: 2rem;
-    }
-
-    .featured-ad img {
-      max-width: 100%;
-      border-radius: 12px;
-    }
-
-    .featured-ad p {
-      margin-top: 1rem;
-    }
-
-    .featured-ad a {
-      color: #e96ca1;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    /* === Carousel Section === */
-    .carousel-section {
-      margin-top: 3rem;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .carousel {
-      overflow: hidden;
-      border-radius: 12px;
-      margin: 1rem auto;
-      max-width: 95%;
-    }
-
-    .carousel-track {
-      display: flex;
-      animation: scroll 80s linear infinite;
-      width: max-content;
-    }
-
-    .carousel-track img {
-      max-width: 250px;
-      width: 100%;
-      height: auto;
-      margin-right: 1rem;
-      border-radius: 12px;
-    }
-
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    /* === Contact === */
-    .contact {
-      padding: 2rem;
-      background-color: #fdf8ee;
-      text-align: center;
-    }
-
-    .contact h2 {
-      margin-bottom: 1rem;
-    }
-
-    .contact p {
-      margin: 0.5rem 0;
-    }
-
-    .contact a {
-      color: #3a2e2e;
-      text-decoration: none;
-    }
-
-    /* === Footer === */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #f5efe0;
-      color: #6a5e5e;
-      font-size: 0.9rem;
-    }
-
-    @media screen and (max-width: 768px) {
-      .carousel-track img {
-        max-width: 180px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vandana Sethiya | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-  <!-- === Navbar === -->
+<body>
+  <!-- Navbar -->
   <nav>
     <div class="nav-content">
-      <h1>Neela</h1>
+      <h1>Vandana Sethiya</h1>
       <ul>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#featured">Featured</a></li>
+        <li><a href="#measurements">Measurements</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- === Hero === -->
-  <section class="hero">
-    <h2>Welcome to Neela by Anuvardan</h2>
-    <p>Where creativity meets expression.</p>
-  </section>
+  <!-- Hero -->
+  <header class="hero">
+    <h2>Model • Actor • Poser</h2>
+  </header>
 
-  <!-- === Gallery === -->
+  <!-- Gallery -->
   <section class="gallery" id="gallery">
     <h2>Gallery</h2>
     <div class="grid">
-      <img src="./images/photo1.jpg" alt="Gallery Image 1">
-      <img src="./images/photo2.jpg" alt="Gallery Image 2">
-      <img src="./images/photo3.jpg" alt="Gallery Image 3">
-      <img src="./images/photo4.jpg" alt="Gallery Image 4">
+      <img src="./images/A1.png" alt="Photo A1" class="popup-img">
+      <img src="./images/A2.png" alt="Photo A2" class="popup-img">
+      <img src="./images/A3.png" alt="Photo A3" class="popup-img">
+      <img src="./images/B1.png" alt="Photo B1" class="popup-img">
+      <img src="./images/B2.png" alt="Photo B2" class="popup-img">
+      <img src="./images/B3.png" alt="Photo B3" class="popup-img">
+      <img src="./images/C1.png" alt="Photo C1" class="popup-img">
+      <img src="./images/C2.png" alt="Photo C2" class="popup-img">
+      <img src="./images/C3.png" alt="Photo C3" class="popup-img">
+      <img src="./images/D1.png" alt="Photo D1" class="popup-img">
+      <img src="./images/D2.png" alt="Photo D2" class="popup-img">
+      <img src="./images/D3.png" alt="Photo D3" class="popup-img">
+      <img src="./images/E1.png" alt="Photo E1" class="popup-img">
+      <img src="./images/E2.png" alt="Photo E2" class="popup-img">
+      <img src="./images/E3.png" alt="Photo E3" class="popup-img">
     </div>
   </section>
 
-  <!-- === Featured === -->
+  <!-- Featured -->
   <section class="featured" id="featured">
     <h2>Featured Work</h2>
+
     <div class="featured-ad">
-      <img src="./images/featured.jpg" alt="Featured Work">
-      <p><strong>Neela by Anuvardan</strong></p>
-      <p><a href="https://instagram.com/anuvardan" target="_blank">@anuvardan</a></p>
+      <a href="https://www.youtube.com/watch?v=m8JHBZNerJM" target="_blank">
+        <img src="./images/invisalign-ad.png" alt="Invisalign Ad">
+      </a>
+      <p>Watch Vandana in the official Invisalign commercial.</p>
     </div>
-  </section>
 
-  <!-- === Carousel === -->
-  <section class="carousel-section">
-    <h3>Runway Moments</h3>
-    <p>Swipe to explore the collection</p>
-    <div class="carousel">
-      <div class="carousel-track">
-        <img src="./images/runway1.jpg" alt="Runway Image 1">
-        <img src="./images/runway2.jpg" alt="Runway Image 2">
-        <img src="./images/runway3.jpg" alt="Runway Image 3">
-        <img src="./images/runway4.jpg" alt="Runway Image 4">
-        <img src="./images/runway5.jpg" alt="Runway Image 5">
-        <img src="./images/runway6.jpg" alt="Runway Image 6">
-        <!-- Repeated for infinite loop -->
-        <img src="./images/runway1.jpg" alt="Runway Image 1">
-        <img src="./images/runway2.jpg" alt="Runway Image 2">
-        <img src="./images/runway3.jpg" alt="Runway Image 3">
-        <img src="./images/runway4.jpg" alt="Runway Image 4">
-        <img src="./images/runway5.jpg" alt="Runway Image 5">
-        <img src="./images/runway6.jpg" alt="Runway Image 6">
+    <div class="carousel-section">
+      <h3>Neela by Anuvardhan</h3>
+      <div class="carousel">
+        <div class="carousel-track">
+          <img src="./images/sareeA1.png" alt="Saree A1">
+          <img src="./images/sareeA2.png" alt="Saree A2">
+          <img src="./images/sareeA3.png" alt="Saree A3">
+          <img src="./images/sareeA4.png" alt="Saree A4">
+          <img src="./images/sareeB1.png" alt="Saree B1">
+          <img src="./images/sareeB2.png" alt="Saree B2">
+          <img src="./images/sareeB3.png" alt="Saree B3">
+          <img src="./images/sareeB4.png" alt="Saree B4">
+        </div>
       </div>
+      <p class="brand-link">
+        <a href="https://instagram.com/neela_by_anuvardhan" target="_blank">@neela_by_anuvardhan</a>
+      </p>
     </div>
   </section>
 
-  <!-- === Contact === -->
+  <!-- Measurements -->
+  <section class="measurements" id="measurements">
+    <h2>Measurements</h2>
+    <ul>
+      <li>Height: 5'4"</li>
+      <li>Bust: 30"</li>
+      <li>Waist: 29"</li>
+      <li>Hips: 35"</li>
+      <li>Shoe: US 6.5</li>
+      <li>Hair: Brown</li>
+      <li>Eyes: Brown</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
   <section class="contact" id="contact">
     <h2>Contact</h2>
-    <p>For inquiries and collaborations:</p>
-    <p>Email: <a href="mailto:contact@neelabyanuvardan.com">contact@neelabyanuvardan.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/anuvardan" target="_blank">@anuvardan</a></p>
+    <p>Email: <a href="mailto:vandhanasethiya1998@gmail.com">vandhanasethiya1998@gmail.com</a></p>
+    <p>Instagram: <a href="https://instagram.com/meetvandanasethiya" target="_blank">@meetvandanasethiya</a></p>
   </section>
 
-  <!-- === Footer === -->
   <footer>
-    <p>&copy; 2025 Neela by Anuvardan. All rights reserved.</p>
+    <p>&copy; 2025 Vandana Sethiya</p>
   </footer>
 
+  <!-- Lightbox Script -->
+  <script>
+    const popupImages = document.querySelectorAll('.popup-img');
+    const lightbox = document.createElement('div');
+    lightbox.classList.add('lightbox-overlay');
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = document.createElement('img');
+    const closeBtn = document.createElement('span');
+    closeBtn.innerHTML = '&times;';
+    closeBtn.classList.add('lightbox-close');
+
+    lightbox.appendChild(closeBtn);
+    lightbox.appendChild(lightboxImg);
+
+    popupImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('show');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox || e.target === lightboxImg) {
+        lightbox.classList.remove('show');
+      }
+    });
+  </script>
 </body>
+
 </html>
