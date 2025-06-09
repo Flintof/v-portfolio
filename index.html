@@ -10,6 +10,11 @@
 </head>
 
 <body>
+
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Vandana's portfolio...</p>
+  </div>
   <!-- Navbar -->
   <nav>
     <div class="nav-content">
@@ -146,6 +151,12 @@
       if (e.target === lightbox || e.target === lightboxImg) {
         lightbox.classList.remove('show');
       }
+    });
+  </script>
+  <script>
+    window.addEventListener("load", function () {
+      const loader = document.getElementById("loader");
+      loader.style.display = "none";
     });
   </script>
 </body>
