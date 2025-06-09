@@ -174,12 +174,17 @@ nav a {
 .measurements ul {
   list-style: none;
   padding: 0;
-  display: inline-block;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 0.5rem 2rem;
   text-align: left;
+  max-width: 400px;
 }
 
 .measurements li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
 }
 
 /* === Contact === */
@@ -308,5 +313,10 @@ footer {
 
   nav {
     padding: 0.5rem 1rem;
+  }
+
+  .measurements ul {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 }
