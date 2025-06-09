@@ -309,11 +309,6 @@ footer {
   nav {
     padding: 0.5rem 1rem;
   }
-
-  .measurements ul {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
 }
 
 .video-wrapper {
