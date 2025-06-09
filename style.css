@@ -283,3 +283,30 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 600px) {
+  .nav-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-content h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  nav {
+    padding: 0.5rem 1rem;
+  }
+}
