@@ -299,6 +299,13 @@ footer {
 }
 
 @media (max-width: 600px) {
+
+  .download-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  margin: 0.3rem 0;
+}
+
   .nav-content {
     flex-direction: column;
     align-items: center;
