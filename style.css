@@ -50,6 +50,19 @@ nav a {
   font-weight: 500;
 }
 
+.download-btn {
+  text-decoration: none;
+  color: #3a2e2e;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+}
+
+.download-btn:hover {
+  color: #e96ca1;
+}
+
 /* === Hero === */
 .hero {
   text-align: center;
