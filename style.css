@@ -60,7 +60,7 @@ nav a {
 }
 
 .download-btn:hover {
-  color: #e96ca1;
+  color: #3a2e2e; /* Slightly darker brown or use #3a2e2e if you want no color change */
 }
 
 /* === Hero === */
