@@ -60,7 +60,8 @@ nav a {
 }
 
 .download-btn:hover {
-  color: #3a2e2e; /* Slightly darker brown or use #3a2e2e if you want no color change */
+  color: #3a2e2e;
+  /* Slightly darker brown or use #3a2e2e if you want no color change */
 }
 
 /* === Hero === */
@@ -313,14 +314,22 @@ footer {
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.8rem;
   }
 
   nav a {
     font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
   }
 
   nav {
     padding: 0.5rem 1rem;
+  }
+
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.2rem;
   }
 }
 
