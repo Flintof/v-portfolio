@@ -20,6 +20,9 @@
   <nav>
     <div class="nav-content">
       <h1>Vandana Sethiya</h1>
+
+      <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
       <ul>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#featured">Featured</a></li>
@@ -189,6 +192,15 @@
   window.addEventListener('load', function () {
     const loader = document.getElementById('loader');
     loader.style.display = 'none';
+  });
+</script>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
   });
 </script>
 
