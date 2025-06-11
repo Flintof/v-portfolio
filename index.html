@@ -25,7 +25,8 @@
         <li><a href="#featured">Featured</a></li>
         <li><a href="#measurements">Measurements</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="./pdfs/Vandana-Sethiya-Portfolio.pdf" download="Vandana_Portfolio.pdf" class="download-btn">Download Portfolio</a></li>
+        <li><a href="./pdfs/Vandana-Sethiya-Portfolio.pdf" download="Vandana_Portfolio.pdf"
+            class="download-btn">Download Portfolio</a></li>
       </ul>
     </div>
   </nav>
@@ -126,44 +127,7 @@
     <p>&copy; 2025 Vandana Sethiya</p>
   </footer>
 
-  <!-- Lightbox Script -->
-  <script>
-    const popupImages = document.querySelectorAll('.popup-img');
-    const lightbox = document.createElement('div');
-    lightbox.classList.add('lightbox-overlay');
-    document.body.appendChild(lightbox);
 
-    const lightboxImg = document.createElement('img');
-    const closeBtn = document.createElement('span');
-    closeBtn.innerHTML = '&times;';
-    closeBtn.classList.add('lightbox-close');
-
-    lightbox.appendChild(closeBtn);
-    lightbox.appendChild(lightboxImg);
-
-    popupImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('show');
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.classList.remove('show');
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox || e.target === lightboxImg) {
-        lightbox.classList.remove('show');
-      }
-    });
-  </script>
-  <script>
-    window.addEventListener("load", function () {
-      const loader = document.getElementById("loader");
-      loader.style.display = "none";
-    });
-  </script>
 
   <button id="backToTop" title="Go to top">↑</button>
 
@@ -180,6 +144,44 @@
 
     backToTopButton.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const lightboxOverlay = document.createElement('div');
+      lightboxOverlay.className = 'lightbox-overlay';
+
+      const lightboxImage = document.createElement('img');
+      const closeButton = document.createElement('div');
+      closeButton.className = 'lightbox-close';
+      closeButton.innerHTML = '&times;';
+
+      lightboxOverlay.appendChild(lightboxImage);
+      lightboxOverlay.appendChild(closeButton);
+      document.body.appendChild(lightboxOverlay);
+
+      // Show lightbox on image click
+      document.querySelectorAll('.grid img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightboxImage.src = img.src;
+          lightboxOverlay.classList.add('show');
+          document.body.style.overflow = 'hidden'; // Lock scroll
+        });
+      });
+
+      // Close lightbox
+      function closeLightbox() {
+        lightboxOverlay.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scroll
+      }
+
+      closeButton.addEventListener('click', closeLightbox);
+      lightboxOverlay.addEventListener('click', (e) => {
+        if (e.target === lightboxOverlay) {
+          closeLightbox();
+        }
+      });
     });
   </script>
 
