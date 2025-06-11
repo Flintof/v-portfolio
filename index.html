@@ -201,6 +201,16 @@
       navLinks.classList.toggle('show');
     });
 
+    // NEW: Add event listener to each navigation link to close the menu
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        // For internal links (e.g., #gallery, #featured), closing the menu is desired.
+        // The download button opens a new tab/downloads, so closing isn't strictly necessary,
+        // but it won't hurt.
+        navLinks.classList.remove('show'); // Remove the 'show' class to hide the menu
+      });
+    });
+
   </script>
 
 </body>
