@@ -72,7 +72,7 @@ nav a {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-..download-btn {
+.download-btn {
   text-decoration: none;
   color: #3a2e2e;
   font-weight: 500;
@@ -449,7 +449,8 @@ section {
   }
 
   nav .nav-content h1 {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Slightly smaller for mobile */
+    text-align: center;
   }
 
   nav .nav-content ul {
@@ -458,14 +459,17 @@ section {
     justify-content: center;
     padding: 0;
     margin: 0;
-    gap: 0.5rem;
+    gap: 0.3rem;
   }
 
   nav .nav-content ul li a {
-    font-size: 1.1rem;
-    /* slightly increased font size */
-    padding: 0.3rem 0.7rem;
+    font-size: 0.9rem;
+    padding: 0.2rem 0.6rem;
   }
 
-
+  .download-btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
 }
