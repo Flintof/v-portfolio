@@ -55,7 +55,7 @@ nav h1 {
 
 nav ul {
   list-style: none;
-  display: none;
+  display: flex;
   gap: 0.8rem;
   padding: 0;
   margin: 0;
