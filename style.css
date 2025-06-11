@@ -295,6 +295,15 @@ footer {
   z-index: 2000;
 }
 
+#loader {
+  transition: opacity 0.5s ease-out;
+  opacity: 1;
+}
+#loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .spinner {
   width: 50px;
   height: 50px;
