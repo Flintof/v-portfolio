@@ -67,7 +67,7 @@ nav a {
   text-decoration: none;
   color: var(--primary-color);
   font-weight: 500;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   padding: 0.25rem 0.5rem;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
@@ -457,7 +457,7 @@ section {
   }
 
   nav .nav-content ul li a {
-    font-size: 0.95rem; /* slightly increased font size */
+    font-size: 0.9rem; /* slightly increased font size */
     padding: 0.3rem 0.7rem;
   }
 
