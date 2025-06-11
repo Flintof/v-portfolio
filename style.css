@@ -84,13 +84,14 @@ nav a {
   color: #3a2e2e;
 }
 
-/* Hamburger menu toggle - HIDDEN by default on desktop */
+/* Menu Toggle Button - Default state (for desktop) */
 .menu-toggle {
   display: none;
-  /* THIS RULE HIDES THE HAMBURGER ICON ON DESKTOP */
+  /* Crucial: Hides the hamburger button on desktop */
   font-size: 1.4rem;
   background-color: transparent;
-  border: 1px solid var(--primary-color);
+  border: none;
+  /* CHANGED: Removed the border */
   border-radius: 6px;
   padding: 0.3rem 0.6rem;
   cursor: pointer;
@@ -100,7 +101,8 @@ nav a {
 
 .menu-toggle:hover {
   background-color: rgba(58, 46, 46, 0.05);
-  border-color: var(--accent-color);
+  border-color: transparent;
+  /* CHANGED: Border is now transparent on hover too */
 }
 
 
@@ -124,6 +126,7 @@ nav a {
   background: radial-gradient(circle, var(--bg-cream) 0%, transparent 70%);
   animation: softPulse 5s ease-in-out infinite alternate;
   z-index: 0;
+  opacity: 1;
 }
 
 .hero h2 {
@@ -464,6 +467,7 @@ section {
   }
 }
 
+/* Mobile View Specifics (768px and below) */
 @media (max-width: 768px) {
   .nav-content {
     flex-direction: column;
@@ -478,10 +482,9 @@ section {
     order: 1;
   }
 
-  /* SHOW THE HAMBURGER MENU BUTTON ON MOBILE */
   .menu-toggle {
     display: block;
-    /* THIS RULE SHOWS THE HAMBURGER ICON ON MOBILE */
+    /* Shows the hamburger button on mobile */
     align-self: flex-end;
     order: 2;
     margin-top: -2.5rem;
