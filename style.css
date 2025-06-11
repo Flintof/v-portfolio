@@ -92,10 +92,9 @@ nav a {
   position: relative;
   text-align: center;
   color: #fff;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   background: linear-gradient(135deg, #f0d6d6, #f7e7f7);
   overflow: hidden;
-  min-height: 200px;
 }
 
 .hero::before {
@@ -542,10 +541,12 @@ section {
 }
 
 .hero {
-    min-height: 250px; /* Ensure sufficient height on smaller screens */
-  }
+  min-height: 250px;
+  /* Ensure sufficient height on smaller screens */
+}
 
-  .hero::before {
-    /* Make the radial gradient spread wider on mobile for better visibility */
-    background: radial-gradient(circle at center, var(--bg-cream) 0%, transparent 85%); /* Increased transparent stop */
-  }
+.hero::before {
+  /* Make the radial gradient spread wider on mobile for better visibility */
+  background: radial-gradient(circle at center, var(--bg-cream) 0%, transparent 85%);
+  /* Increased transparent stop */
+}
