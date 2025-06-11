@@ -20,10 +20,8 @@
   <nav>
     <div class="nav-content">
       <h1>Vandana Sethiya</h1>
-
       <button class="menu-toggle" id="menuToggle">&#9776;</button>
-
-      <ul>
+      <ul class="nav-links">
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#featured">Featured</a></li>
         <li><a href="#measurements">Measurements</a></li>
@@ -189,20 +187,20 @@
   </script>
 
   <script>
-  window.addEventListener('load', function () {
-    const loader = document.getElementById('loader');
-    loader.style.display = 'none';
-  });
-</script>
+    window.addEventListener('load', function () {
+      const loader = document.getElementById('loader');
+      loader.style.display = 'none';
+    });
+  </script>
 
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.querySelector('.nav-links');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-  });
-</script>
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 
 </body>
 
