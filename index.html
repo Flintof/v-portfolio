@@ -195,7 +195,7 @@
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('.nav-links'); // This is the <ul> element
 
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('show');
@@ -210,7 +210,6 @@
         navLinks.classList.remove('show'); // Remove the 'show' class to hide the menu
       });
     });
-
   </script>
 
 </body>
