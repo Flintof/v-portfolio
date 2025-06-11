@@ -241,6 +241,17 @@ footer {
   padding: 1rem;
 }
 
+.lightbox-overlay {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lightbox-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .lightbox-overlay.show {
   display: flex;
 }
@@ -425,5 +436,28 @@ footer {
 
   100% {
     transform: scale(1.1) rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h2 {
+    font-size: 1.5rem;
+  }
+}
+
+nav a {
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
