@@ -291,6 +291,8 @@ footer {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* optional but looks clean */
+  z-index: 10;
 }
 
 .lightbox-close {
