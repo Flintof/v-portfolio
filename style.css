@@ -291,7 +291,8 @@ footer {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* optional but looks clean */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  /* optional but looks clean */
   z-index: 10;
 }
 
@@ -442,27 +443,56 @@ section {
 
 /* === Mobile View Fixes === */
 @media (max-width: 768px) {
-  nav .nav-content {
+  .nav-content {
     flex-direction: column;
+    /* Stack items vertically on mobile */
     align-items: center;
+    /* Center items horizontally in the column */
     gap: 0.5rem;
   }
 
-  nav .nav-content h1 {
-    font-size: 1rem; /* Slightly smaller for mobile */
+  nav h1 {
+    font-size: 1rem;
+    /* Slightly smaller for mobile */
     text-align: center;
+    width: 100%;
+    /* Ensure title takes full width */
+    order: 1;
+    /* Ensure the title comes first */
   }
 
-  nav .nav-content ul {
+  /* Show the hamburger menu toggle on mobile */
+  .menu-toggle {
+    display: block;
+    align-self: flex-end;
+    /* Push the toggle to the right */
+    order: 2;
+    /* Position it after the title */
+    margin-top: -2.5rem;
+    /* Adjust as needed to align with the nav-content */
+    margin-right: 0.5rem;
+    /* Small right margin */
+  }
+
+  /* Hide the navigation links by default on mobile, to be toggled by JS */
+  nav ul {
+    display: none;
+    /* Hide the nav links on smaller screens */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 1rem;
+    order: 3;
+    /* Position the links after the toggle */
+  }
+
+  /* This class will be added by JavaScript to show the menu */
+  nav ul.show {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-    gap: 0.3rem;
+    /* Show the nav links when 'show' class is present */
   }
 
-  nav .nav-content ul li a {
+  nav ul li a {
     font-size: 0.9rem;
     padding: 0.2rem 0.6rem;
   }
