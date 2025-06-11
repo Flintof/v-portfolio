@@ -104,7 +104,8 @@ nav a {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(245, 239, 224, 0.4) 0%, transparent 70%);
+  /* CHANGED: Using var(--bg-cream) directly for the radial gradient start color */
+  background: radial-gradient(circle, var(--bg-cream) 0%, transparent 70%);
   animation: pulseBg 5s linear infinite;
   z-index: 0;
 }
