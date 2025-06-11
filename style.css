@@ -426,7 +426,7 @@ footer {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 192, 203, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 239, 224, 0.2) 0%, transparent 70%);
   animation: pulseBg 5s linear infinite;
   z-index: 0;
 }
