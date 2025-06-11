@@ -87,11 +87,11 @@ nav a {
 /* Menu Toggle Button - Default state (for desktop) */
 .menu-toggle {
   display: none;
-  /* Crucial: Hides the hamburger button on desktop */
+  /* Hides the hamburger button on desktop */
   font-size: 1.4rem;
   background-color: transparent;
   border: none;
-  /* CHANGED: Removed the border */
+  /* Removed the border */
   border-radius: 6px;
   padding: 0.3rem 0.6rem;
   cursor: pointer;
@@ -102,7 +102,7 @@ nav a {
 .menu-toggle:hover {
   background-color: rgba(58, 46, 46, 0.05);
   border-color: transparent;
-  /* CHANGED: Border is now transparent on hover too */
+  /* Border is now transparent on hover too */
 }
 
 
@@ -124,9 +124,11 @@ nav a {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, var(--bg-cream) 0%, transparent 70%);
+  /* Ensure animation is applied and starts visible */
   animation: softPulse 5s ease-in-out infinite alternate;
-  z-index: 0;
   opacity: 1;
+  /* Explicitly ensure it starts visible for animation to take over */
+  z-index: 0;
 }
 
 .hero h2 {
