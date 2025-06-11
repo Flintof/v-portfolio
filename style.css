@@ -72,21 +72,20 @@ nav a {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.download-btn,
-.download-link {
-  color: white;
+..download-btn {
+  text-decoration: none;
+  color: #3a2e2e;
   font-weight: 500;
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
-  text-decoration: none;
-  background-color: var(--accent-color);
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.download-btn:hover,
-.download-link:hover {
-  background-color: var(--accent-hover);
+.download-btn:hover {
+  color: #3a2e2e;
 }
+
+
 
 /* === Hero === */
 .hero {
@@ -462,8 +461,5 @@ section {
     padding: 0.3rem 0.7rem;
   }
 
-  .download-btn {
-    white-space: nowrap; /* prevent wrapping */
-    font-size: 0.95rem;
-  }
+
 }
