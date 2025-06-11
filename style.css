@@ -433,7 +433,7 @@ section {
   }
 
   .download-btn {
-    font-size: 0.5rem;
+    font-size: 1.1rem;
     white-space: nowrap;
     padding: 0.3rem 0.6rem;
     margin: 0;
@@ -462,7 +462,7 @@ section {
   }
 
   nav .nav-content ul li a {
-    font-size: 0.5rem;
+    font-size: 1.1rem;
     /* slightly increased font size */
     padding: 0.3rem 0.7rem;
   }
