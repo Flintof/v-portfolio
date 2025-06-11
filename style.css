@@ -278,6 +278,7 @@ footer {
   transition: opacity 0.3s ease;
   opacity: 0;
   pointer-events: none;
+  z-index: 9999;
 }
 
 .lightbox-overlay.show {
