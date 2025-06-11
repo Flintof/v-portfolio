@@ -41,7 +41,6 @@ nav {
   align-items: center;
   max-width: 1100px;
   margin: auto;
-  /* Removed redundant flex-direction: row; and align-items: center; as they are default or handled by align-items on parent */
   gap: 0.5rem;
 }
 
@@ -52,11 +51,9 @@ nav h1 {
   white-space: nowrap;
 }
 
-/* Default state for desktop: navigation links are visible */
 nav ul {
   list-style: none;
   display: flex;
-  /* IMPORTANT: Ensures nav links are visible on desktop */
   gap: 0.8rem;
   padding: 0;
   margin: 0;
@@ -84,18 +81,6 @@ nav a {
 
 .download-btn:hover {
   color: #3a2e2e;
-  /* No visible change as it's already the default color */
-}
-
-/* Hamburger menu toggle - hidden by default on desktop */
-.menu-toggle {
-  display: none;
-  /* IMPORTANT: Hides the hamburger icon on desktop */
-  font-size: 1.6rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--primary-color);
 }
 
 
@@ -105,10 +90,8 @@ nav a {
   text-align: center;
   color: #fff;
   padding: 2rem 1rem;
-  /* Reverted to smaller padding as requested */
   background: linear-gradient(135deg, #f0d6d6, #f7e7f7);
   overflow: hidden;
-  /* Removed min-height here to allow padding to control the size as requested */
 }
 
 .hero::before {
@@ -119,8 +102,9 @@ nav a {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, var(--bg-cream) 0%, transparent 70%);
-  /* Reverted to transparent 70% as requested */
-  animation: pulseBg 5s linear infinite;
+  /* CHANGED: Using the new 'softPulse' animation */
+  animation: softPulse 5s ease-in-out infinite alternate;
+  /* New animation properties */
   z-index: 0;
 }
 
@@ -409,15 +393,39 @@ footer {
   }
 }
 
+/* NEW: Soft Pulse Animation */
+@keyframes softPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+    /* Start with higher opacity */
+  }
+
+  50% {
+    transform: scale(1.05);
+    /* Slightly expand */
+    opacity: 0.5;
+    /* Fade out slightly */
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+    /* Return to start state */
+  }
+}
+
+/* REMOVED: Old pulseBg animation */
+/*
 @keyframes pulseBg {
   0% {
     transform: scale(1) rotate(0deg);
   }
-
   100% {
     transform: scale(1.1) rotate(360deg);
   }
 }
+*/
 
 @keyframes fadeInUp {
   to {
@@ -456,8 +464,6 @@ section {
 }
 
 @media (max-width: 768px) {
-
-  /* Consolidate nav-content mobile styles */
   .nav-content {
     flex-direction: column;
     align-items: center;
@@ -471,25 +477,16 @@ section {
     order: 1;
   }
 
-  /* Show the hamburger menu toggle on mobile */
   .menu-toggle {
     display: block;
-    /* Show on mobile */
     align-self: flex-end;
-    /* Push to the right */
     order: 2;
-    /* Position after title */
     margin-top: -2.5rem;
-    /* Adjust to align with nav-content */
     margin-right: 0.5rem;
   }
 
-  /* Hide navigation links by default on mobile, to be toggled by JS */
-  /* This targets nav ul (which has class .nav-links) */
   nav ul {
-    /* Targeting 'nav ul' directly as .nav-links is the same element */
     display: none;
-    /* Hidden on mobile by default */
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -497,9 +494,7 @@ section {
     order: 3;
   }
 
-  /* When 'show' class is added by JS, display the links */
   nav ul.show {
-    /* Used 'nav ul.show' instead of '.nav-links.show' for consistency */
     display: flex;
   }
 
@@ -514,8 +509,6 @@ section {
     white-space: nowrap;
   }
 
-  /* Removed specific min-height for hero on mobile, letting global padding control it */
-  /* Reverted hero::before background on mobile to match global (smaller) size */
   .hero::before {
     background: radial-gradient(circle, var(--bg-cream) 0%, transparent 70%);
   }
