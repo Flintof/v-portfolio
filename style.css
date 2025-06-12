@@ -163,8 +163,10 @@ nav a {
 }
 
 .grid {
+  /* CHANGED: Set to exactly 3 columns */
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
+  /* Now displays exactly 3 photos per row */
   gap: 1rem;
 }
 
@@ -468,6 +470,7 @@ section {
 
   .grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* Keep flexibility for smaller screens */
   }
 
   .hero h2 {
