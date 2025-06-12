@@ -78,7 +78,7 @@
     <div class="carousel-section">
       <h3>Neela by Anuvardhan</h3>
       <div class="carousel">
-        <div class="carousel-track">
+        <div class="carousel-track" id="carouselTrack">
           <img src="./images/sareeA1.png" alt="Saree A1">
           <img src="./images/sareeA2.png" alt="Saree A2">
           <img src="./images/sareeA3.png" alt="Saree A3">
@@ -162,7 +162,6 @@
 
       lightboxOverlay.appendChild(lightboxImage);
       lightboxOverlay.appendChild(closeButton);
-      // REMOVED: prevButton and nextButton creation and appending here
 
       document.body.appendChild(lightboxOverlay);
 
@@ -186,7 +185,6 @@
       // Function to show image in lightbox
       function showImageInLightbox(index) {
         lightboxImage.src = galleryImages[index].src;
-        // No need to hide/show nav buttons anymore as they are removed
       }
 
       // Close lightbox
@@ -236,6 +234,18 @@
       const loader = document.getElementById('loader');
       loader.style.display = 'none';
       window.scrollTo(0, 0); // Scroll to the top of the page when everything is loaded
+
+      // --- NEW CODE FOR CAROUSEL ANIMATION FIX ---
+      const carouselTrack = document.getElementById('carouselTrack');
+      if (carouselTrack) {
+        // Temporarily remove animation to reset it
+        carouselTrack.style.animation = 'none';
+        // Force a reflow (re-render)
+        carouselTrack.offsetHeight;
+        // Re-apply the animation
+        carouselTrack.style.animation = 'scroll 80s linear infinite';
+      }
+      // --- END NEW CODE ---
     });
   </script>
 
