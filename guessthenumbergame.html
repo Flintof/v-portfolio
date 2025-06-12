@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Birthday Surprise for My Love! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f0d6d6, #f7e7f7); /* Soft gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #3a2e2e; /* Primary color from your portfolio */
+            text-align: center;
+        }
+        .game-container {
+            background-color: #fffaf3; /* Light background from your portfolio */
+            padding: 2.5rem;
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow */
+            max-width: 90%; /* Responsive width */
+            width: 450px; /* Max width for desktop */
+            animation: fadeInScale 0.8s ease-out forwards;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #e96ca1; /* Accent color from your portfolio */
+            line-height: 1.2;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        input[type="number"] {
+            border: 2px solid #e0d4b7; /* Light border */
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+            font-size: 1.2rem;
+            width: 100px;
+            text-align: center;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #e96ca1; /* Accent on focus */
+        }
+        button {
+            background-color: #e96ca1; /* Accent color */
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        button:hover {
+            background-color: #d85a94; /* Darker accent on hover */
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            margin-top: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            min-height: 24px; /* Reserve space to prevent layout shift */
+        }
+        .prize-section {
+            margin-top: 2rem;
+            border-top: 2px dashed #e0d4b7;
+            padding-top: 1.5rem;
+            display: none; /* Hidden until win */
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .prize-section h2 {
+            font-size: 1.8rem;
+            color: #3a2e2e;
+            margin-bottom: 1rem;
+        }
+        .prize-link {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #e96ca1;
+            text-decoration: none;
+            word-break: break-all; /* Ensures URL wraps if too long */
+        }
+        .prize-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .game-container {
+                padding: 1.5rem;
+            }
+            p {
+                font-size: 0.9rem;
+            }
+            input[type="number"] {
+                width: 80px;
+                padding: 0.6rem;
+                font-size: 1rem;
+            }
+            button {
+                padding: 0.6rem 1.2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>A Special Birthday Quest!</h1>
+        <p>I have a secret number in my mind, between 1 and 10.</p>
+        <p>Can you guess it to unlock a special surprise?</p>
+
+        <input type="number" id="guessInput" min="1" max="10" placeholder="?">
+        <button id="guessButton">Guess!</button>
+
+        <p class="message" id="message"></p>
+
+        <div class="prize-section" id="prizeSection">
+            <h2>🎉 Congratulations! 🎉</h2>
+            <p>You've unlocked your birthday surprise!</p>
+            <p>Click the link below:</p>
+            <a href="YOUR_GIRLFRIENDS_PORTFOLIO_URL_HERE" target="_blank" class="prize-link" id="portfolioLink">
+                Click for your Portfolio!
+            </a>
+            <p class="mt-2 text-sm text-gray-500">Don't forget to bookmark it!</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const randomNumber = Math.floor(Math.random() * 10) + 1; // Number between 1 and 10
+            let attempts = 0;
+            const maxAttempts = 5; // Give her a few tries!
+
+            const guessInput = document.getElementById('guessInput');
+            const guessButton = document.getElementById('guessButton');
+            const messageDisplay = document.getElementById('message');
+            const prizeSection = document.getElementById('prizeSection');
+            const portfolioLink = document.getElementById('portfolioLink');
+
+            // IMPORTANT: Replace this with your girlfriend's actual portfolio URL!
+            // Example: const portfolioUrl = "https://vandanasethiya.netlify.app";
+            const portfolioUrl = "YOUR_GIRLFRIENDS_PORTFOLIO_URL_HERE";
+
+            portfolioLink.href = portfolioUrl; // Set the actual URL to the link
+
+            guessButton.addEventListener('click', () => {
+                const guess = parseInt(guessInput.value);
+
+                if (isNaN(guess) || guess < 1 || guess > 10) {
+                    messageDisplay.textContent = "Please enter a valid number between 1 and 10.";
+                    return;
+                }
+
+                attempts++;
+
+                if (guess === randomNumber) {
+                    messageDisplay.textContent = `You got it! The number was ${randomNumber}!`;
+                    messageDisplay.style.color = '#e96ca1'; // Accent color for success
+                    guessInput.disabled = true;
+                    guessButton.disabled = true;
+                    prizeSection.style.display = 'block'; // Show the prize
+                    // Confetti effect (optional, but fun!)
+                    setTimeout(() => {
+                        confetti({
+                            particleCount: 100,
+                            spread: 70,
+                            origin: { y: 0.6 }
+                        });
+                    }, 500);
+                } else if (attempts >= maxAttempts) {
+                    messageDisplay.textContent = `Oh no! You've run out of guesses. The number was ${randomNumber}.`;
+                    messageDisplay.style.color = '#e96ca1'; // Accent color for failure
+                    guessInput.disabled = true;
+                    guessButton.disabled = true;
+                    prizeSection.style.display = 'block'; // Still show the prize, because it's her birthday!
+                    // You might want a different message or a slightly different reveal here if she 'loses'
+                    portfolioLink.textContent = "Click here for your special gift!"; // More encouraging text
+                } else if (guess < randomNumber) {
+                    messageDisplay.textContent = `Too low! Try again. Attempts left: ${maxAttempts - attempts}`;
+                    messageDisplay.style.color = '#3a2e2e';
+                } else {
+                    messageDisplay.textContent = `Too high! Try again. Attempts left: ${maxAttempts - attempts}`;
+                    messageDisplay.style.color = '#3a2e2e';
+                }
+                guessInput.value = ''; // Clear input after guess
+            });
+            // Allow pressing Enter key to guess
+            guessInput.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    guessButton.click();
+                }
+            });
+        });
+    </script>
+    <!-- Optional: Confetti library for celebration -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</body>
+</html>

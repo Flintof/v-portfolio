@@ -73,15 +73,6 @@ nav a {
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
-.download-btn {
-  text-decoration: none;
-  color: #3a2e2e;
-  font-weight: 500;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  transition: color 0.3s ease;
-}
-
 .download-btn:hover {
   color: #3a2e2e;
 }
@@ -309,9 +300,10 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
-  /* Allow lightbox content to scroll if needed */
+  overflow: hidden;
+  /* Prevent scrolling of lightbox overlay itself */
   padding: 1rem;
+  /* Adjust padding to give space for buttons */
   transition: opacity 0.3s ease;
   opacity: 0;
   pointer-events: none;
@@ -325,28 +317,43 @@ footer {
 
 .lightbox-overlay img {
   max-width: 90%;
-  max-height: 90%;
+  max-height: 90vh;
+  /* Use vh for vertical height to ensure it fits viewport */
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   z-index: 10;
   display: block;
-  /* Ensure it behaves as a block element */
   margin: auto;
-  /* Explicitly center using auto margins */
+  /* Ensures horizontal and vertical centering within flex container */
   object-fit: contain;
-  /* Ensure the entire image is visible, scaling down if necessary */
+  /* Ensures the entire image is visible without cropping */
 }
 
 .lightbox-close {
   position: absolute;
-  top: 2rem;
-  right: 2rem;
-  font-size: 2rem;
+  top: 1rem;
+  /* Adjusted closer to top corner */
+  right: 1rem;
+  /* Adjusted closer to right corner */
+  font-size: 2.2rem;
+  /* Slightly larger for easier click */
   color: white;
   cursor: pointer;
+  z-index: 12;
+  /* Ensure it's above buttons */
+  background: rgba(0, 0, 0, 0.3);
+  /* Small background for better contrast */
+  border-radius: 50%;
+  /* Make it round */
+  width: 40px;
+  /* Make it a clear clickable area */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* NEW: Lightbox Navigation Buttons */
+/* Lightbox Navigation Buttons */
 .lightbox-nav-btn {
   position: absolute;
   top: 50%;
@@ -355,32 +362,38 @@ footer {
   /* Semi-transparent background */
   color: white;
   border: none;
-  padding: 0.8rem 1.2rem;
-  font-size: 1.5rem;
+  padding: 1rem;
+  /* Increased padding for larger click area */
+  font-size: 1.8rem;
+  /* Larger icons for visibility and touch */
   cursor: pointer;
   z-index: 11;
   /* Above the image */
-  border-radius: 8px;
-  /* Rounded corners */
-  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  /* Make them round */
+  width: 50px;
+  /* Fixed width/height for circular shape */
+  height: 50px;
   display: flex;
+  /* Use flex to center the icon */
   align-items: center;
   justify-content: center;
+  transition: background-color 0.3s ease;
 }
 
 .lightbox-nav-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   /* Darker on hover */
 }
 
 .lightbox-prev {
   left: 1rem;
-  /* Position on the left */
+  /* Keep a safe margin from the edge */
 }
 
 .lightbox-next {
   right: 1rem;
-  /* Position on the right */
+  /* Keep a safe margin from the edge */
 }
 
 
@@ -512,12 +525,6 @@ section {
     width: 200px;
   }
 
-  /*
-  The .grid rule that would create 2 columns on small screens has been removed.
-  This ensures 'grid-template-columns: repeat(3, 1fr);' from the global .grid rule
-  now applies to all screen sizes, including mobile, forcing 3 columns.
-  */
-
   .hero h2 {
     font-size: 1.5rem;
   }
@@ -529,18 +536,34 @@ section {
     margin: 0;
   }
 
-  /* Adjust lightbox nav button size for smaller screens */
+  /* Specific adjustments for lightbox on very small screens */
+  .lightbox-overlay img {
+    max-width: 95%;
+    /* Give a bit more room on edges */
+    max-height: 85vh;
+    /* Adjust height for button and close icon */
+  }
+
   .lightbox-nav-btn {
-    padding: 0.6rem 0.9rem;
-    font-size: 1.2rem;
-  }
-
-  .lightbox-prev {
+    padding: 0.5rem;
+    /* Smaller padding */
+    font-size: 1.5rem;
+    /* Slightly smaller icon */
+    width: 40px;
+    /* Smaller button size */
+    height: 40px;
     left: 0.5rem;
+    /* Closer to edge */
+    right: 0.5rem;
+    /* Closer to edge */
   }
 
-  .lightbox-next {
+  .lightbox-close {
+    top: 0.5rem;
     right: 0.5rem;
+    font-size: 1.8rem;
+    width: 35px;
+    height: 35px;
   }
 }
 
