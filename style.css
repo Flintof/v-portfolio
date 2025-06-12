@@ -107,7 +107,9 @@ nav a {
   color: #fff;
   padding: 2rem 1rem;
   /* Smaller padding for a compact hero section */
-  background: linear-gradient(135deg, #f0d6d6, #f7e7f7);
+  /* CHANGED: Background to subtle white gradient */
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  /* Changed from pinkish gradient */
   overflow: hidden;
 }
 
