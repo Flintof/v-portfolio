@@ -302,8 +302,9 @@ footer {
   align-items: center;
   overflow: hidden;
   /* Prevent scrolling of lightbox overlay itself */
-  padding: 1rem;
-  /* Adjust padding to give space for buttons */
+  /* Remove padding from overlay to let image use full space up to 1rem from edges */
+  /* padding: 1rem; */
+  /* REMOVED THIS PADDING */
   transition: opacity 0.3s ease;
   opacity: 0;
   pointer-events: none;
@@ -316,9 +317,11 @@ footer {
 }
 
 .lightbox-overlay img {
-  max-width: 90%;
-  max-height: 90vh;
-  /* Use vh for vertical height to ensure it fits viewport */
+  /* Adjusted for better centering and responsiveness */
+  max-width: calc(100% - 2rem);
+  /* Take full width minus 1rem padding on each side */
+  max-height: calc(100vh - 2rem);
+  /* Take full height minus 1rem padding on top/bottom */
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   z-index: 10;
@@ -327,6 +330,8 @@ footer {
   /* Ensures horizontal and vertical centering within flex container */
   object-fit: contain;
   /* Ensures the entire image is visible without cropping */
+  transition: max-width 0.3s ease, max-height 0.3s ease;
+  /* Smooth resizing */
 }
 
 .lightbox-close {
@@ -361,7 +366,6 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   /* Semi-transparent background */
   color: white;
-  border: none;
   padding: 1rem;
   /* Increased padding for larger click area */
   font-size: 1.8rem;
@@ -536,12 +540,11 @@ section {
     margin: 0;
   }
 
-  /* Specific adjustments for lightbox on very small screens */
+  /* Lightbox specific adjustments for very small screens */
   .lightbox-overlay img {
-    max-width: 95%;
-    /* Give a bit more room on edges */
-    max-height: 85vh;
-    /* Adjust height for button and close icon */
+    max-width: calc(100% - 1rem);
+    /* More aggressive fit, 0.5rem padding each side */
+    max-height: calc(100vh - 1rem);
   }
 
   .lightbox-nav-btn {
@@ -552,15 +555,15 @@ section {
     width: 40px;
     /* Smaller button size */
     height: 40px;
-    left: 0.5rem;
+    left: 0.2rem;
     /* Closer to edge */
-    right: 0.5rem;
+    right: 0.2rem;
     /* Closer to edge */
   }
 
   .lightbox-close {
-    top: 0.5rem;
-    right: 0.5rem;
+    top: 0.2rem;
+    right: 0.2rem;
     font-size: 1.8rem;
     width: 35px;
     height: 35px;
