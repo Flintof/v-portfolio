@@ -46,8 +46,7 @@ nav {
 
 nav h1 {
   margin: 0;
-  font-size: 1.2rem;
-  /* Default desktop title size */
+  font-size: 1.2rem; /* Default desktop title size */
   text-align: center;
   white-space: nowrap;
 }
@@ -55,8 +54,7 @@ nav h1 {
 /* Navbar links default to flex (visible) on desktop */
 nav ul {
   list-style: none;
-  display: flex;
-  /* IMPORTANT: Ensures nav links are visible on desktop */
+  display: flex; /* IMPORTANT: Ensures nav links are visible on desktop */
   gap: 0.8rem;
   padding: 0;
   margin: 0;
@@ -88,12 +86,10 @@ nav a {
 
 /* Menu Toggle Button - Default state (for desktop) */
 .menu-toggle {
-  display: none;
-  /* Crucial: Hides the hamburger button on desktop */
+  display: none; /* Crucial: Hides the hamburger button on desktop */
   font-size: 1.4rem;
   background-color: transparent;
-  border: none;
-  /* No border for the button */
+  border: none; /* No border for the button */
   border-radius: 6px;
   padding: 0.3rem 0.6rem;
   cursor: pointer;
@@ -103,8 +99,7 @@ nav a {
 
 .menu-toggle:hover {
   background-color: rgba(58, 46, 46, 0.05);
-  border-color: transparent;
-  /* Ensure no border appears on hover either */
+  border-color: transparent; /* Ensure no border appears on hover either */
 }
 
 
@@ -113,8 +108,7 @@ nav a {
   position: relative;
   text-align: center;
   color: #fff;
-  padding: 2rem 1rem;
-  /* Smaller padding for a compact hero section */
+  padding: 2rem 1rem; /* Smaller padding for a compact hero section */
   background: linear-gradient(135deg, #f0d6d6, #f7e7f7);
   overflow: hidden;
 }
@@ -127,10 +121,8 @@ nav a {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, var(--bg-cream) 0%, transparent 70%);
-  animation: pulseBg 5s linear infinite;
-  /* Reverted to pulseBg animation */
-  opacity: 1;
-  /* Explicitly ensure it starts visible for animation to take over */
+  animation: pulseBg 5s linear infinite; /* Reverted to pulseBg animation */
+  opacity: 1; /* Explicitly ensure it starts visible for animation to take over */
   z-index: 0;
 }
 
@@ -143,10 +135,8 @@ nav a {
 
 /* Styles for hero text animation */
 .hero-title {
-  opacity: 0;
-  /* Start with the text being invisible */
-  animation: fadeIn 1s ease-out 0.5s forwards;
-  /* Apply the fade-in animation */
+  opacity: 0; /* Start with the text being invisible */
+  animation: fadeIn 1s ease-out 0.5s forwards; /* Apply the fade-in animation */
 }
 
 
@@ -163,10 +153,8 @@ nav a {
 }
 
 .grid {
-  /* CHANGED: Set to exactly 3 columns */
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* Now displays exactly 3 photos per row */
+  grid-template-columns: repeat(3, 1fr); /* Now displays exactly 3 photos per row */
   gap: 1rem;
 }
 
@@ -303,15 +291,13 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  /* CHANGED: Background to semi-transparent black for visible background */
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Changed from 1 to 0.7 for transparency */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  overflow: auto; /* Allow lightbox content to scroll if needed */
   padding: 1rem;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -322,7 +308,6 @@ footer {
 .lightbox-overlay.show {
   opacity: 1;
   pointer-events: all;
-  display: flex;
 }
 
 .lightbox-overlay img {
@@ -331,6 +316,9 @@ footer {
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
   z-index: 10;
+  display: block; /* Ensure it behaves as a block element */
+  margin: auto; /* Explicitly center using auto margins */
+  object-fit: contain; /* Ensure the entire image is visible, scaling down if necessary */
 }
 
 .lightbox-close {
@@ -437,7 +425,6 @@ footer {
   0% {
     transform: scale(1) rotate(0deg);
   }
-
   100% {
     transform: scale(1.1) rotate(360deg);
   }
@@ -471,8 +458,7 @@ section {
   }
 
   .grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    /* Keep flexibility for smaller screens */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Keep flexibility for smaller screens */
   }
 
   .hero h2 {
@@ -496,8 +482,7 @@ section {
   }
 
   nav h1 {
-    font-size: 1.3rem;
-    /* INCREASED FONT SIZE FOR MOBILE TITLE */
+    font-size: 1.3rem; /* INCREASED FONT SIZE FOR MOBILE TITLE */
     text-align: center;
     width: 100%;
     order: 1;
@@ -505,8 +490,7 @@ section {
 
   /* SHOW THE HAMBURGER MENU BUTTON ON MOBILE */
   .menu-toggle {
-    display: block;
-    /* This correctly overrides the global 'display: none' for mobile */
+    display: block; /* This correctly overrides the global 'display: none' for mobile */
     align-self: flex-end;
     order: 2;
     margin-top: -2.5rem;
