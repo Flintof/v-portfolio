@@ -47,6 +47,7 @@ nav {
 nav h1 {
   margin: 0;
   font-size: 1.2rem;
+  /* Default desktop title size */
   text-align: center;
   white-space: nowrap;
 }
@@ -140,7 +141,7 @@ nav a {
   color: #333;
 }
 
-/* NEW: Styles for hero text animation */
+/* Styles for hero text animation */
 .hero-title {
   opacity: 0;
   /* Start with the text being invisible */
@@ -438,7 +439,7 @@ footer {
   }
 }
 
-/* NEW: Fade In Keyframes for text */
+/* Fade In Keyframes for text */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -490,7 +491,8 @@ section {
   }
 
   nav h1 {
-    font-size: 1rem;
+    font-size: 1.3rem;
+    /* INCREASED FONT SIZE FOR MOBILE TITLE */
     text-align: center;
     width: 100%;
     order: 1;
