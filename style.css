@@ -121,8 +121,8 @@ nav a {
   width: 200%;
   height: 200%;
   background: radial-gradient(circle, var(--bg-cream) 0%, transparent 70%);
-  animation: pulseBg 5s linear infinite;
-  /* Reverted to pulseBg animation */
+  animation: slowPan 60s linear infinite alternate;
+  /* CHANGED to slowPan animation */
   opacity: 1;
   /* Explicitly ensure it starts visible for animation to take over */
   z-index: 0;
@@ -455,18 +455,30 @@ footer {
   }
 }
 
-/* Original pulseBg animation */
+/* NEW: Subtle Horizontal Pan Animation */
+@keyframes slowPan {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+    /* Pans to the left */
+  }
+}
+
+/* Removed Old pulseBg animation */
+/*
 @keyframes pulseBg {
   0% {
     transform: scale(1) rotate(0deg);
   }
-
   100% {
     transform: scale(1.1) rotate(360deg);
   }
 }
+*/
 
-/* Fade In Keyframes for text */
 @keyframes fadeIn {
   to {
     opacity: 1;
