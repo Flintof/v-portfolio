@@ -165,7 +165,7 @@ nav a {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* Always displays exactly 3 photos per row */
+  /* Now displays exactly 3 photos per row */
   gap: 1rem;
 }
 
@@ -346,6 +346,44 @@ footer {
   cursor: pointer;
 }
 
+/* NEW: Lightbox Navigation Buttons */
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent background */
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 11;
+  /* Above the image */
+  border-radius: 8px;
+  /* Rounded corners */
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Darker on hover */
+}
+
+.lightbox-prev {
+  left: 1rem;
+  /* Position on the left */
+}
+
+.lightbox-next {
+  right: 1rem;
+  /* Position on the right */
+}
+
+
 /* === Loader === */
 #loader {
   position: fixed;
@@ -474,11 +512,10 @@ section {
     width: 200px;
   }
 
-  /* REMOVED: Grid rule here to ensure 3 columns always apply */
   /*
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
+  The .grid rule that would create 2 columns on small screens has been removed.
+  This ensures 'grid-template-columns: repeat(3, 1fr);' from the global .grid rule
+  now applies to all screen sizes, including mobile, forcing 3 columns.
   */
 
   .hero h2 {
@@ -490,6 +527,20 @@ section {
     white-space: nowrap;
     padding: 0.3rem 0.6rem;
     margin: 0;
+  }
+
+  /* Adjust lightbox nav button size for smaller screens */
+  .lightbox-nav-btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 1.2rem;
+  }
+
+  .lightbox-prev {
+    left: 0.5rem;
+  }
+
+  .lightbox-next {
+    right: 0.5rem;
   }
 }
 
