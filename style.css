@@ -303,7 +303,9 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 1);
+  /* CHANGED: Background to semi-transparent black for visible background */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Changed from 1 to 0.7 for transparency */
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   display: none;
